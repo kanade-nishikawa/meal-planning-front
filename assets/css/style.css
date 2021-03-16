@@ -1,0 +1,317 @@
+html, body, div, li, ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  height: 100%;
+  user-select: none;
+}
+
+body {
+  font-family: "Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  color: #333333;
+  background-color: #E9ECEF;
+  letter-spacing: .5px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+li {
+  display: block;
+}
+ul {
+  display: inline-block;
+  list-style: none;
+}
+
+.mainContents {
+  display: block;
+  padding: 0 0 0 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.meals {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+  .meals>h1 {
+    display: inline-block;
+    position: relative;
+    margin: 50px 0 20px 0;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+  }
+    .meals>h1::before {
+      content: '';
+      position: absolute;
+      border-top: solid 3px #333333;
+      width: calc(40% - 50px);
+      height: 0px;
+      top: 50%;
+      left: 50px;
+    }
+    .meals>h1::after {
+      content: '';
+      position: absolute;
+      border-top: solid 3px #333333;
+      width: calc(40% - 50px);
+      height: 0px;
+      top: 50%;
+      right: 50px;
+    }
+    .meals h1 .icon {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      transform: scale(1.5) translateY(2px) translateX(-5px);
+      background: url(../images/meals.svg) no-repeat;
+      background-size: contain;
+    }
+  .mealArea {
+    display: block;
+    position: relative;
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    margin: 30px 15px 50px 15px;
+    float: left;
+    overflow: hidden;
+    text-align: center;
+  }
+    .mealBox {
+      position: relative;
+      margin: 5px;
+      padding: 0;
+      min-width: 300px;
+      min-height: 350px;
+      width: calc(30% - 5px);
+      height: calc(50% - 5px);
+      background-color: #FFFFFF;
+      transition: all .5s;
+      -webkit-transition: all .5s;
+      border-radius: 5px;
+    }
+    .mealBox:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 1px 6px rgba(0, 0, 0, .3);
+    }
+      .mealBox h1.mealTitle {
+        position: relative;
+        margin: 0;
+        padding: 10px;
+        width: 100%;
+        height: auto;
+        font-size: 23px;
+        color: #FFFFFF;
+        border-radius: 5px 5px 0 0;
+      }
+      .mealBox h1.breakfast {
+        background-color: #f0a639;
+      }
+        .mealBox h1.breakfast .icon {
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          transform: scale(1.5) translateY(5px) translateX(-10px);
+          background: url(../images/breakfast.svg) no-repeat;
+          background-size: contain;
+        }
+      .mealBox h1.lunch {
+        background-color: #ec794c;
+      }
+        .mealBox h1.lunch .icon {
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          transform: translateY(5px) translateX(-10px);
+          background: url(../images/lunch.svg) no-repeat;
+          background-size: contain;
+        }
+      .mealBox h1.dinner {
+        background-color: #4b5dac;
+      }
+        .mealBox h1.dinner .icon {
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          transform: translateY(5px) translateX(-10px);
+          background: url(../images/dinner.svg) no-repeat;
+          background-size: contain;
+        }
+     .dropArea {
+        position: absolute;
+        vertical-align: middle;
+        width: calc(100% - 20px);
+        height: calc(80% - 10px);
+        margin: 10px;
+        border: dashed 3px #CCCCCC;
+        font-weight: bold;
+        color: #999999;
+        transition: all .3s;
+     }
+      .dropArea:hover {
+        cursor: pointer;
+        background-color: #eceff1;
+      }
+      .dropArea p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform : translate(-50%,-50%);
+        transform : translate(-50%,-50%);
+        width: 100%;
+        text-align: center;
+      }
+    .dispArea {
+      position: absolute;
+      vertical-align: middle;
+      width: calc(100% - 20px);
+      height: calc(80% - 10px);
+      margin: 10px;
+      font-weight: bold;
+      transition: all .3s;
+    }
+    .dispArea:hover {
+      cursor: pointer;
+      background-color: #eceff1;
+    }
+    .dispArea p {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform : translate(-50%,-50%);
+      transform : translate(-50%,-50%);
+      width: 100%;
+      text-align: center;
+    }
+    .meal {
+      position: relative;
+      margin: 5px;
+      padding: 15px;
+      width: calc(100% - 5px);
+      height: auto;
+      color: #FFFFFF;
+      background-color: #545261;
+      transition: box-shadow .3s;
+      transition: background-color .3s;
+      -webkit-transition: box-shadow background-color .3s;
+      -webkit-transition: background-color .3s;
+      border-radius: 5px;
+    }
+      .meal span {
+        position: absolute;
+        display: inline-block;
+        width: 50px;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background-color: #3e3e44;
+        transition: background-color .3s;
+        -webkit-transition: background-color .3s;
+        border-radius: 0 5px 5px 0;
+      }
+      .meal span:hover {
+        background-color: #353538;
+      }
+        .meal span .closeIcon {
+          position: absolute;
+          display: inline-block;
+          width: calc(100% - 35px);
+          height: calc(100% - 35px);
+          top: 52%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          background: url(../images/close.svg) no-repeat;
+          background-size: contain;
+        }
+      
+.menus {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.menus>h1 {
+  display: inline-block;
+  position: relative;
+  margin: 50px 0 20px 0;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+}
+  .menus>h1::before {
+    content: '';
+    position: absolute;
+    border-top: solid 3px #333333;
+    width: calc(40% - 50px);
+    height: 0px;
+    top: 50%;
+    left: 50px;
+  }
+  .menus>h1::after {
+    content: '';
+    position: absolute;
+    border-top: solid 3px #333333;
+    width: calc(40% - 50px);
+    height: 0px;
+    top: 50%;
+    right: 50px;
+  }
+  .menus h1 .icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    transform: scale(1.5) translateY(2px) translateX(-5px);
+    background: url(../images/meals.svg) no-repeat;
+    background-size: contain;
+  }
+  .menuArea {
+    display: block;
+    position: relative;
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    margin: 15px;
+    float: left;
+    overflow: hidden;
+    text-align: center;
+  }
+    .menuBox {
+      position: relative;
+      margin: 5px;
+      padding: 15px;
+      width: calc(25% - 5px);
+      height: auto;
+      color: #FFFFFF;
+      background-color: #545261;
+      transition: box-shadow .3s;
+      transition: background-color .3s;
+      -webkit-transition: box-shadow background-color .3s;
+      -webkit-transition: background-color .3s;
+      border-radius: 5px;
+      z-index: 999;
+    }
+      .menuBox:hover:not(.placeHolder) {
+        cursor: grab;
+        background-color: #635e7c;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, .3);
+      }
+      .menuBox:active:not(.placeHolder) {
+        cursor: grabbing;
+      }
+    .placeHolder {
+      background-color: #d3d7dc;
+      z-index: 1;
+      padding: 17px;
+    }
+      .placeHolder::before {
+        content: "";
+        display: inline-block;
+      }
