@@ -270,7 +270,7 @@ ul {
     width: 20px;
     height: 20px;
     transform: scale(1.5) translateY(2px) translateX(-5px);
-    background: url(../images/meals.svg) no-repeat;
+    background: url(../images/menus.svg) no-repeat;
     background-size: contain;
   }
   .menuArea {
