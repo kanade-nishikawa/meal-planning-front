@@ -91,7 +91,7 @@ ul {
       padding: 0;
       min-width: 300px;
       min-height: 350px;
-      width: calc(30% - 5px);
+      width: calc(20% - 5px);
       height: calc(50% - 5px);
       background-color: #FFFFFF;
       transition: all .5s;
@@ -107,8 +107,8 @@ ul {
         margin: 0;
         padding: 10px;
         width: 100%;
-        height: auto;
-        font-size: 23px;
+        min-height: 50px;
+        font-size: 20px;
         color: #FFFFFF;
         border-radius: 5px 5px 0 0;
       }
@@ -117,9 +117,9 @@ ul {
       }
         .mealBox h1.breakfast .icon {
           display: inline-block;
-          width: 30px;
-          height: 30px;
-          transform: scale(1.5) translateY(5px) translateX(-10px);
+          width: 25px;
+          height: 25px;
+          transform: scale(1.5) translateY(5px) translateX(-8px);
           background: url(../images/breakfast.svg) no-repeat;
           background-size: contain;
         }
@@ -128,9 +128,9 @@ ul {
       }
         .mealBox h1.lunch .icon {
           display: inline-block;
-          width: 30px;
-          height: 30px;
-          transform: translateY(5px) translateX(-10px);
+          width: 25px;
+          height: 25px;
+          transform: translateY(3px) translateX(-8px);
           background: url(../images/lunch.svg) no-repeat;
           background-size: contain;
         }
@@ -139,10 +139,21 @@ ul {
       }
         .mealBox h1.dinner .icon {
           display: inline-block;
-          width: 30px;
-          height: 30px;
-          transform: translateY(5px) translateX(-10px);
+          width: 25px;
+          height: 25px;
+          transform: translateY(3px) translateX(-8px);
           background: url(../images/dinner.svg) no-repeat;
+          background-size: contain;
+        }
+      .mealBox h1.snack {
+        background-color: #e6697e;
+      }
+        .mealBox h1.snack .icon {
+          display: inline-block;
+          width: 25px;
+          height: 25px;
+          transform: translateY(3px) translateX(-8px);
+          background: url(../images/snack.svg) no-repeat;
           background-size: contain;
         }
      .dropArea {
@@ -287,7 +298,8 @@ ul {
       position: relative;
       margin: 5px;
       padding: 15px;
-      width: calc(25% - 5px);
+      min-width: 300px;
+      width: calc(20% - 5px);
       height: auto;
       color: #FFFFFF;
       background-color: #545261;

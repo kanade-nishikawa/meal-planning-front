@@ -92,6 +92,33 @@
               </p>
             </div>
           </ul>
+          <ul class="mealBox">
+            <h1 class="mealTitle snack">
+              <i class="icon" />
+              間食
+            </h1>
+            <div v-if="meals.snack.length" id="snack" class="dispArea">
+              <ul
+                v-for="(meal, index) in meals.snack"
+                :key="index"
+                class="meal"
+              >
+                {{
+                  meal.name
+                }}
+                <span>
+                  <i class="closeIcon" @click="removeItem('snack', index)" />
+                </span>
+              </ul>
+            </div>
+            <div v-else id="snack" class="dropArea">
+              <p>
+                ここに食事を
+                <br />
+                ドロップしてください！
+              </p>
+            </div>
+          </ul>
         </li>
       </div>
 
@@ -126,7 +153,8 @@ export default {
       meals: {
         breakfast: [],
         lunch: [],
-        dinner: []
+        dinner: [],
+        snack: []
       },
       // menusは仮置き。あとで値をDBから取ってくるようにしたい。。。
       menus: [
