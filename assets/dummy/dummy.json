@@ -1,0 +1,1157 @@
+{
+  "menus": [
+    {
+      "id": "0000001",
+      "category": "stapleFood",
+      "name": "ごはん大盛り",
+      "description": "1杯",
+      "points": {
+        "stapleFood": 2
+      },
+      "kcal": 340
+    },
+    {
+      "id": "0000002",
+      "category": "stapleFood",
+      "name": "ごはん中盛り",
+      "description": "1杯",
+      "points": {
+        "stapleFood": 1.5
+      },
+      "kcal": 250
+    },
+    {
+      "id": "0000003",
+      "category": "stapleFood",
+      "name": "ごはん小盛り",
+      "description": "1杯",
+      "points": {
+        "stapleFood": 1
+      },
+      "kcal": 170
+    },
+    {
+      "id": "0000004",
+      "category": "stapleFood",
+      "name": "おにぎり",
+      "description": "",
+      "points": {
+        "stapleFood": 1
+      },
+      "kcal": 170
+    },
+    {
+      "id": "0000005",
+      "category": "stapleFood",
+      "name": "白がゆ",
+      "description": "",
+      "points": {
+        "stapleFood": 1
+      },
+      "kcal": 140
+    },
+    {
+      "id": "0000006",
+      "category": "stapleFood",
+      "name": "うな重",
+      "description": "",
+      "points": {
+        "stapleFood": 2,
+        "mainDish": 3
+      },
+      "kcal": 630
+    },
+    {
+      "id": "0000007",
+      "category": "stapleFood",
+      "name": "エビピラフ",
+      "description": "ご飯、タマネギ、マッシュルーム、エビ",
+      "points": {
+        "stapleFood": 2,
+        "sideDish": 1,
+        "mainDish": 1
+      },
+      "kcal": 480
+    },
+    {
+      "id": "0000008",
+      "category": "stapleFood",
+      "name": "親子丼",
+      "description": "ご飯、タマネギ、鶏肉",
+      "points": {
+        "stapleFood": 2,
+        "sideDish": 1,
+        "mainDish": 2
+      },
+      "kcal": 510
+    },
+    {
+      "id": "0000009",
+      "category": "stapleFood",
+      "name": "カツ丼",
+      "description": "ご飯、タマネギ、豚肉",
+      "points": {
+        "stapleFood": 2,
+        "sideDish": 1,
+        "mainDish": 3
+      },
+      "kcal": 870
+    },
+    {
+      "id": "0000010",
+      "category": "stapleFood",
+      "name": "カレーライス",
+      "description": "ご飯、じゃが芋、タマネギ、にんじん、豚肉",
+      "points": {
+        "stapleFood": 2,
+        "sideDish": 2,
+        "mainDish": 2
+      },
+      "kcal": 760
+    },
+    {
+      "id": "0000011",
+      "category": "stapleFood",
+      "name": "すし（にぎり）",
+      "description": "ご飯、まぐろ、イカ、エビ、卵",
+      "points": {
+        "stapleFood": 2,
+        "mainDish": 1
+      },
+      "kcal": 500
+    },
+    {
+      "id": "0000012",
+      "category": "stapleFood",
+      "name": "チキンライス",
+      "description": "ご飯、鶏肉",
+      "points": {
+        "stapleFood": 2,
+        "mainDish": 1
+      },
+      "kcal": 650
+    },
+    {
+      "id": "0000013",
+      "category": "stapleFood",
+      "name": "チャーハン",
+      "description": "ご飯、にんじん、しいたけ、ピーマン、ハム、卵",
+      "points": {
+        "stapleFood": 2,
+        "sideDish": 1,
+        "mainDish": 2
+      },
+      "kcal": 700
+    },
+    {
+      "id": "0000014",
+      "category": "stapleFood",
+      "name": "天丼",
+      "description": "ご飯、エビ",
+      "points": {
+        "stapleFood": 2,
+        "mainDish": 1
+      },
+      "kcal": 560
+    },
+    {
+      "id": "0000015",
+      "category": "stapleFood",
+      "name": "ビビンバ",
+      "description": "ご飯、ほうれん草、大根、ぜんまい、牛肉、卵",
+      "points": {
+        "stapleFood": 2,
+        "sideDish": 2,
+        "mainDish": 2
+      },
+      "kcal": 620
+    },
+    {
+      "id": "0000016",
+      "category": "stapleFood",
+      "name": "トースト（6枚切り）",
+      "description": "",
+      "points": {
+        "stapleFood": 1
+      },
+      "kcal": 220
+    },
+    {
+      "id": "0000017",
+      "category": "stapleFood",
+      "name": "トースト（4枚切り）",
+      "description": "",
+      "points": {
+        "stapleFood": 1
+      },
+      "kcal": 300
+    },
+    {
+      "id": "0000018",
+      "category": "stapleFood",
+      "name": "クロワッサン",
+      "description": "2個",
+      "points": {
+        "stapleFood": 1
+      },
+      "kcal": 360
+    },
+    {
+      "id": "0000019",
+      "category": "stapleFood",
+      "name": "ロールパン",
+      "description": "2個",
+      "points": {
+        "stapleFood": 1
+      },
+      "kcal": 190
+    },
+    {
+      "id": "0000020",
+      "category": "stapleFood",
+      "name": "ぶどうパン",
+      "description": "2個",
+      "points": {
+        "stapleFood": 1
+      },
+      "kcal": 220
+    },
+    {
+      "id": "0000021",
+      "category": "stapleFood",
+      "name": "調理パン",
+      "description": "パン、スイートコーン",
+      "points": {
+        "stapleFood": 1
+      },
+      "kcal": 280
+    },
+    {
+      "id": "0000022",
+      "category": "stapleFood",
+      "name": "ハンバーガー",
+      "description": "パン、合いびき肉",
+      "points": {
+        "stapleFood": 1,
+        "mainDish": 2
+      },
+      "kcal": 500
+    },
+    {
+      "id": "0000023",
+      "category": "stapleFood",
+      "name": "ピザトースト",
+      "description": "パン、チーズ",
+      "points": {
+        "stapleFood": 1,
+        "dairyProduct": 4
+      },
+      "kcal": 340
+    },
+    {
+      "id": "0000024",
+      "category": "stapleFood",
+      "name": "ミックスサンドイッチ",
+      "description": "パン、きゅうり、レタス、ハム、卵、チーズ",
+      "points": {
+        "stapleFood": 1,
+        "sideDish": 1,
+        "mainDish": 1,
+        "dairyProduct": 1
+      },
+      "kcal": 550
+    },
+    {
+      "id": "0000025",
+      "category": "stapleFood",
+      "name": "かけうどん",
+      "description": "",
+      "points": {
+        "stapleFood": 2
+      },
+      "kcal": 400
+    },
+    {
+      "id": "0000026",
+      "category": "stapleFood",
+      "name": "天ぷらうどん",
+      "description": "うどん、エビ",
+      "points": {
+        "stapleFood": 2,
+        "mainDish": 1
+      },
+      "kcal": 640
+    },
+    {
+      "id": "0000027",
+      "category": "stapleFood",
+      "name": "ざるそば",
+      "description": "",
+      "points": {
+        "stapleFood": 2
+      },
+      "kcal": 430
+    },
+    {
+      "id": "0000028",
+      "category": "stapleFood",
+      "name": "ラーメン",
+      "description": "",
+      "points": {
+        "stapleFood": 2
+      },
+      "kcal": 430
+    },
+    {
+      "id": "0000029",
+      "category": "stapleFood",
+      "name": "チャーシューメン",
+      "description": "中華麺、めんま、青菜、豚肉",
+      "points": {
+        "stapleFood": 2,
+        "sideDish": 1,
+        "mainDish": 1
+      },
+      "kcal": 430
+    },
+    {
+      "id": "0000030",
+      "category": "stapleFood",
+      "name": "天津メン",
+      "description": "中華麺、卵",
+      "points": {
+        "stapleFood": 2,
+        "mainDish": 2
+      },
+      "kcal": 680
+    },
+    {
+      "id": "0000031",
+      "category": "stapleFood",
+      "name": "焼きそば",
+      "description": "中華麺、キャベツ、タマネギ、にんじん、ピーマン、豚肉",
+      "points": {
+        "stapleFood": 1,
+        "sideDish": 2,
+        "mainDish": 1
+      },
+      "kcal": 540
+    },
+    {
+      "id": "0000032",
+      "category": "stapleFood",
+      "name": "スパゲッティ（ナポリタン）",
+      "description": "スパゲッティ、タマネギ、にんじん、マッシュルーム、ピーマン",
+      "points": {
+        "stapleFood": 2,
+        "sideDish": 1
+      },
+      "kcal": 520
+    },
+    {
+      "id": "0000033",
+      "category": "stapleFood",
+      "name": "お好み焼き",
+      "description": "小麦粉、キャベツ、山芋、豚肉、イカ、さくらエビ",
+      "points": {
+        "stapleFood": 1,
+        "sideDish": 1,
+        "mainDish": 3
+      },
+      "kcal": 550
+    },
+    {
+      "id": "0000034",
+      "category": "stapleFood",
+      "name": "たこ焼き",
+      "description": "小麦粉、たこ、卵",
+      "points": {
+        "stapleFood": 1,
+        "mainDish": 1
+      },
+      "kcal": 320
+    },
+    {
+      "id": "0000035",
+      "category": "stapleFood",
+      "name": "マカロニグラタン",
+      "description": "マカロニ、牛乳、チーズ",
+      "points": {
+        "stapleFood": 1,
+        "dairyProduct": 2
+      },
+      "kcal": 450
+    },
+    {
+      "id": "0000036",
+      "category": "sideDish",
+      "name": "うずら豆の含め煮",
+      "description": "",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 110
+    },
+    {
+      "id": "0000037",
+      "category": "sideDish",
+      "name": "かぼちゃの煮物",
+      "description": "",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 120
+    },
+    {
+      "id": "0000038",
+      "category": "sideDish",
+      "name": "きのこのバター炒め",
+      "description": "えのき、しいたけ、しめじ",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 70
+    },
+    {
+      "id": "0000039",
+      "category": "sideDish",
+      "name": "キャベツの炒め物",
+      "description": "",
+      "points": {
+        "sideDish": 2
+      },
+      "kcal": 210
+    },
+    {
+      "id": "0000040",
+      "category": "sideDish",
+      "name": "きゅうりとわかめの酢の物",
+      "description": "",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 30
+    },
+    {
+      "id": "0000041",
+      "category": "sideDish",
+      "name": "切り干し大根の煮物",
+      "description": "切干大根、しいたけ、にんじん",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 120
+    },
+    {
+      "id": "0000042",
+      "category": "sideDish",
+      "name": "きんぴらごぼう",
+      "description": "ごぼう、にんじん",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 100
+    },
+    {
+      "id": "0000043",
+      "category": "sideDish",
+      "name": "小松菜の炒め煮",
+      "description": "",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 100
+    },
+    {
+      "id": "0000044",
+      "category": "sideDish",
+      "name": "コロッケ",
+      "description": "じゃが芋、タマネギ",
+      "points": {
+        "sideDish": 2
+      },
+      "kcal": 310
+    },
+    {
+      "id": "0000045",
+      "category": "sideDish",
+      "name": "里芋の煮物",
+      "description": "里芋、しいたけ、にんじん、さやいんげん",
+      "points": {
+        "sideDish": 2
+      },
+      "kcal": 120
+    },
+    {
+      "id": "0000046",
+      "category": "sideDish",
+      "name": "じゃが芋の煮物",
+      "description": "じゃが芋、タマネギ、にんじん",
+      "points": {
+        "sideDish": 2
+      },
+      "kcal": 170
+    },
+    {
+      "id": "0000047",
+      "category": "sideDish",
+      "name": "春菊のごまあえ",
+      "description": "",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 80
+    },
+    {
+      "id": "0000048",
+      "category": "sideDish",
+      "name": "なすのしぎやき",
+      "description": "なす、ピーマン",
+      "points": {
+        "sideDish": 2
+      },
+      "kcal": 210
+    },
+    {
+      "id": "0000049",
+      "category": "sideDish",
+      "name": "なます",
+      "description": "大根、にんじん",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 90
+    },
+    {
+      "id": "0000050",
+      "category": "sideDish",
+      "name": "にんじんのバター煮",
+      "description": "",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 70
+    },
+    {
+      "id": "0000051",
+      "category": "sideDish",
+      "name": "ひじきの煮物",
+      "description": "ひじき、にんじん",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 100
+    },
+    {
+      "id": "0000052",
+      "category": "sideDish",
+      "name": "ふかし芋",
+      "description": "",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 130
+    },
+    {
+      "id": "0000053",
+      "category": "sideDish",
+      "name": "ほうれん草のお浸し",
+      "description": "",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 20
+    },
+    {
+      "id": "0000054",
+      "category": "sideDish",
+      "name": "ほうれん草の中華風炒め物",
+      "description": "ほうれん草、もやし、たけのこ",
+      "points": {
+        "sideDish": 2
+      },
+      "kcal": 210
+    },
+    {
+      "id": "0000055",
+      "category": "sideDish",
+      "name": "ポテトフライ",
+      "description": "じゃが芋",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 120
+    },
+    {
+      "id": "0000056",
+      "category": "sideDish",
+      "name": "もやしにら炒め",
+      "description": "もやし、にら、にんじん",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 190
+    },
+    {
+      "id": "0000057",
+      "category": "sideDish",
+      "name": "野菜の煮しめ",
+      "description": "里芋、しいたけ、たけのこ、にんじん、れんこん、こんにゃく、ごぼう等",
+      "points": {
+        "sideDish": 2
+      },
+      "kcal": 130
+    },
+    {
+      "id": "0000058",
+      "category": "sideDish",
+      "name": "野菜の天ぷら",
+      "description": "かぼちゃ、さつま芋、大根、ししとうがらし、なす、れんこん",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 230
+    },
+    {
+      "id": "0000059",
+      "category": "sideDish",
+      "name": "枝豆",
+      "description": "",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 70
+    },
+    {
+      "id": "0000060",
+      "category": "sideDish",
+      "name": "海藻とツナのサラダ",
+      "description": "とさかのり、キュウリ、わかめ",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 70
+    },
+    {
+      "id": "0000061",
+      "category": "sideDish",
+      "name": "キャベツのサラダ",
+      "description": "",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 50
+    },
+    {
+      "id": "0000062",
+      "category": "sideDish",
+      "name": "きゅうりのもろみ添え",
+      "description": "",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 30
+    },
+    {
+      "id": "0000063",
+      "category": "sideDish",
+      "name": "冷やしトマト",
+      "description": "",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 170
+    },
+    {
+      "id": "0000064",
+      "category": "sideDish",
+      "name": "ポテトサラダ",
+      "description": "じゃが芋、きゅうり、にんじん",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 170
+    },
+    {
+      "id": "0000065",
+      "category": "sideDish",
+      "name": "レタスときゅうりのサラダ",
+      "description": "レタス、トマト、キュウリ",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 50
+    },
+    {
+      "id": "0000066",
+      "category": "sideDish",
+      "name": "ゆでブロッコリー",
+      "description": "",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 90
+    },
+    {
+      "id": "0000067",
+      "category": "sideDish",
+      "name": "じゃが芋のみそ汁",
+      "description": "じゃが芋、タマネギ、わかめ",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 70
+    },
+    {
+      "id": "0000068",
+      "category": "sideDish",
+      "name": "根菜の汁物",
+      "description": "大根、ごぼう、しいたけ、にんじん、ねぎ",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 20
+    },
+    {
+      "id": "0000069",
+      "category": "sideDish",
+      "name": "コーンスープ",
+      "description": "スイートコーン、タマネギ",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 130
+    },
+    {
+      "id": "0000070",
+      "category": "sideDish",
+      "name": "野菜スープ",
+      "description": "キャベツ、タマネギ、にんじん、さやえんどう、セロリ",
+      "points": {
+        "sideDish": 1
+      },
+      "kcal": 60
+    },
+    {
+      "id": "0000071",
+      "category": "mainDish",
+      "name": "ウインナーのソテー",
+      "description": "2本",
+      "points": {
+        "mainDish": 1
+      },
+      "kcal": 180
+    },
+    {
+      "id": "0000072",
+      "category": "mainDish",
+      "name": "おでん",
+      "description": "豆腐、さつま揚げ、ちくわ、大根、こんにゃく、里芋、ふき、ごぼう",
+      "points": {
+        "sideDish": 4,
+        "mainDish": 2
+      },
+      "kcal": 240
+    },
+    {
+      "id": "0000073",
+      "category": "mainDish",
+      "name": "オムレツ",
+      "description": "卵2個",
+      "points": {
+        "mainDish": 2
+      },
+      "kcal": 220
+    },
+    {
+      "id": "0000074",
+      "category": "mainDish",
+      "name": "がんもどきの煮物",
+      "description": "がんもどき、大根、にんじん、春菊",
+      "points": {
+        "sideDish": 1,
+        "mainDish": 2
+      },
+      "kcal": 180
+    },
+    {
+      "id": "0000075",
+      "category": "mainDish",
+      "name": "ギョーザ",
+      "description": "豚肉、キャベツ",
+      "points": {
+        "sideDish": 1,
+        "mainDish": 2
+      },
+      "kcal": 350
+    },
+    {
+      "id": "0000076",
+      "category": "mainDish",
+      "name": "クリームシチュー",
+      "description": "豚肉、じゃが芋、タマネギ、にんじん、ブロッコリー、マッシュルーム、牛乳",
+      "points": {
+        "sideDish": 3,
+        "mainDish": 2,
+        "dairyProduct": 1
+      },
+      "kcal": 380
+    },
+    {
+      "id": "0000077",
+      "category": "mainDish",
+      "name": "魚の照り焼き",
+      "description": "ブリ",
+      "points": {
+        "mainDish": 2
+      },
+      "kcal": 220
+    },
+    {
+      "id": "0000078",
+      "category": "mainDish",
+      "name": "魚のフライ",
+      "description": "まだら",
+      "points": {
+        "mainDish": 2
+      },
+      "kcal": 250
+    },
+    {
+      "id": "0000079",
+      "category": "mainDish",
+      "name": "さけの塩焼き",
+      "description": "鮭",
+      "points": {
+        "mainDish": 2
+      },
+      "kcal": 120
+    },
+    {
+      "id": "0000080",
+      "category": "mainDish",
+      "name": "サケのムニエル",
+      "description": "鮭",
+      "points": {
+        "mainDish": 3
+      },
+      "kcal": 190
+    },
+    {
+      "id": "0000081",
+      "category": "mainDish",
+      "name": "さしみ",
+      "description": "まぐろ、イカ",
+      "points": {
+        "mainDish": 2
+      },
+      "kcal": 80
+    },
+    {
+      "id": "0000082",
+      "category": "mainDish",
+      "name": "さんまの塩焼き",
+      "description": "さんま",
+      "points": {
+        "mainDish": 2
+      },
+      "kcal": 210
+    },
+    {
+      "id": "0000083",
+      "category": "mainDish",
+      "name": "すき焼き",
+      "description": "牛肉、卵、豆腐、しらたき、春菊、しいたけ、ねぎ",
+      "points": {
+        "sideDish": 2,
+        "mainDish": 4
+      },
+      "kcal": 670
+    },
+    {
+      "id": "0000084",
+      "category": "mainDish",
+      "name": "酢豚",
+      "description": "豚肉、たまねぎ、にんじん、たけのこ、ピーマン",
+      "points": {
+        "sideDish": 2,
+        "mainDish": 3
+      },
+      "kcal": 640
+    },
+    {
+      "id": "0000085",
+      "category": "mainDish",
+      "name": "たたき",
+      "description": "かつお",
+      "points": {
+        "mainDish": 3
+      },
+      "kcal": 100
+    },
+    {
+      "id": "0000086",
+      "category": "mainDish",
+      "name": "天ぷら盛り合わせ",
+      "description": "きす、いか、えび、大根、さつま芋、にんじん、しいたけ、ししとうがらし",
+      "points": {
+        "sideDish": 1,
+        "mainDish": 2
+      },
+      "kcal": 410
+    },
+    {
+      "id": "0000087",
+      "category": "mainDish",
+      "name": "鶏肉のから揚げ",
+      "description": "鶏肉",
+      "points": {
+        "mainDish": 3
+      },
+      "kcal": 300
+    },
+    {
+      "id": "0000088",
+      "category": "mainDish",
+      "name": "トンカツ",
+      "description": "豚肉",
+      "points": {
+        "mainDish": 3
+      },
+      "kcal": 350
+    },
+    {
+      "id": "0000089",
+      "category": "mainDish",
+      "name": "南蛮漬け",
+      "description": "あじ",
+      "points": {
+        "mainDish": 2
+      },
+      "kcal": 230
+    },
+    {
+      "id": "0000090",
+      "category": "mainDish",
+      "name": "煮魚",
+      "description": "さば",
+      "points": {
+        "mainDish": 2
+      },
+      "kcal": 210
+    },
+    {
+      "id": "0000091",
+      "category": "mainDish",
+      "name": "肉じゃが",
+      "description": "牛肉、じゃが芋、しらたき、タマネギ",
+      "points": {
+        "sideDish": 3,
+        "mainDish": 1
+      },
+      "kcal": 350
+    },
+    {
+      "id": "0000092",
+      "category": "mainDish",
+      "name": "ハンバーグ",
+      "description": "牛肉・豚肉、たまねぎ、レタス",
+      "points": {
+        "sideDish": 1,
+        "mainDish": 3
+      },
+      "kcal": 410
+    },
+    {
+      "id": "0000093",
+      "category": "mainDish",
+      "name": "ビーフステーキ",
+      "description": "牛肉",
+      "points": {
+        "mainDish": 5
+      },
+      "kcal": 400
+    },
+    {
+      "id": "0000094",
+      "category": "mainDish",
+      "name": "干物",
+      "description": "かます",
+      "points": {
+        "mainDish": 2
+      },
+      "kcal": 80
+    },
+    {
+      "id": "0000095",
+      "category": "mainDish",
+      "name": "豚肉のしょうが焼き",
+      "description": "豚肉",
+      "points": {
+        "mainDish": 3
+      },
+      "kcal": 350
+    },
+    {
+      "id": "0000096",
+      "category": "mainDish",
+      "name": "麻婆豆腐",
+      "description": "豆腐、豚肉",
+      "points": {
+        "mainDish": 2
+      },
+      "kcal": 230
+    },
+    {
+      "id": "0000097",
+      "category": "mainDish",
+      "name": "焼きとり",
+      "description": "2本",
+      "points": {
+        "mainDish": 2
+      },
+      "kcal": 210
+    },
+    {
+      "id": "0000098",
+      "category": "mainDish",
+      "name": "ロールキャベツ",
+      "description": "豚肉、ベーコン、キャベツ、たまねぎ",
+      "points": {
+        "sideDish": 3,
+        "mainDish": 1
+      },
+      "kcal": 240
+    },
+    {
+      "id": "0000099",
+      "category": "mainDish",
+      "name": "卵焼き",
+      "description": "卵1.5個",
+      "points": {
+        "mainDish": 2
+      },
+      "kcal": 150
+    },
+    {
+      "id": "0000100",
+      "category": "mainDish",
+      "name": "目玉焼き",
+      "description": "卵1個",
+      "points": {
+        "mainDish": 1
+      },
+      "kcal": 110
+    },
+    {
+      "id": "0000101",
+      "category": "mainDish",
+      "name": "納豆",
+      "description": "1パック",
+      "points": {
+        "mainDish": 1
+      },
+      "kcal": 110
+    },
+    {
+      "id": "0000102",
+      "category": "mainDish",
+      "name": "冷奴",
+      "description": "1/3丁",
+      "points": {
+        "mainDish": 1
+      },
+      "kcal": 100
+    },
+    {
+      "id": "0000103",
+      "category": "dairyProduct",
+      "name": "牛乳",
+      "description": "瓶1本",
+      "points": {
+        "dairyProduct": 2
+      },
+      "kcal": 130
+    },
+    {
+      "id": "0000104",
+      "category": "dairyProduct",
+      "name": "プロセスチーズ",
+      "description": "1枚",
+      "points": {
+        "dairyProduct": 1
+      },
+      "kcal": 70
+    },
+    {
+      "id": "0000105",
+      "category": "dairyProduct",
+      "name": "ヨーグルト",
+      "description": "1パック",
+      "points": {
+        "dairyProduct": 1
+      },
+      "kcal": 60
+    },
+    {
+      "id": "0000106",
+      "category": "fruit",
+      "name": "かき",
+      "description": "1個",
+      "points": {
+        "fruit": 1
+      },
+      "kcal": 60
+    },
+    {
+      "id": "0000107",
+      "category": "fruit",
+      "name": "なし",
+      "description": "半分",
+      "points": {
+        "fruit": 1
+      },
+      "kcal": 50
+    },
+    {
+      "id": "0000108",
+      "category": "fruit",
+      "name": "ぶどう",
+      "description": "半房",
+      "points": {
+        "fruit": 1
+      },
+      "kcal": 60
+    },
+    {
+      "id": "0000109",
+      "category": "fruit",
+      "name": "みかん",
+      "description": "1個",
+      "points": {
+        "fruit": 1
+      },
+      "kcal": 50
+    },
+    {
+      "id": "0000110",
+      "category": "fruit",
+      "name": "もも",
+      "description": "1個",
+      "points": {
+        "fruit": 1
+      },
+      "kcal": 40
+    },
+    {
+      "id": "0000111",
+      "category": "fruit",
+      "name": "りんご",
+      "description": "半分",
+      "points": {
+        "fruit": 1
+      },
+      "kcal": 50
+    }
+  ]
+}

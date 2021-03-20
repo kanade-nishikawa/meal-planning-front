@@ -1,5 +1,13 @@
 <template>
   <div class="container">
+    <div class="sum">
+      # 仮置き
+      <span class="stapleFood">主食{{ pointSum('stapleFood') }}</span>
+      <span class="sideDish">副菜{{ pointSum('sideDish') }}</span>
+      <span class="mainDish">主菜{{ pointSum('mainDish') }}</span>
+      <span class="dairyProduct">牛乳・乳製品{{ pointSum('dairyProduct') }}</span>
+      <span class="fruit">果物{{ pointSum('fruit') }}</span>
+    </div>
     <div class="mainContents">
       <div class="meals">
         <h1>
@@ -36,6 +44,13 @@
                 ドロップしてください！
               </p>
             </div>
+            <div class="point">
+              <span class="stapleFood">{{ points.breakfast.stapleFood }}</span>
+              <span class="sideDish">{{ points.breakfast.sideDish }}</span>
+              <span class="mainDish">{{ points.breakfast.mainDish }}</span>
+              <span class="dairyProduct">{{ points.breakfast.dairyProduct }}</span>
+              <span class="fruit">{{ points.breakfast.fruit }}</span>
+            </div>
           </ul>
 
           <ul class="mealBox">
@@ -64,6 +79,13 @@
                 ドロップしてください！
               </p>
             </div>
+            <div class="point">
+              <span class="stapleFood">{{ points.lunch.stapleFood }}</span>
+              <span class="sideDish">{{ points.lunch.sideDish }}</span>
+              <span class="mainDish">{{ points.lunch.mainDish }}</span>
+              <span class="dairyProduct">{{ points.lunch.dairyProduct }}</span>
+              <span class="fruit">{{ points.lunch.fruit }}</span>
+            </div>
           </ul>
           <ul class="mealBox">
             <h1 class="mealTitle dinner">
@@ -91,6 +113,13 @@
                 ドロップしてください！
               </p>
             </div>
+            <div class="point">
+              <span class="stapleFood">{{ points.dinner.stapleFood }}</span>
+              <span class="sideDish">{{ points.dinner.sideDish }}</span>
+              <span class="mainDish">{{ points.dinner.mainDish }}</span>
+              <span class="dairyProduct">{{ points.dinner.dairyProduct }}</span>
+              <span class="fruit">{{ points.dinner.fruit }}</span>
+            </div>
           </ul>
           <ul class="mealBox">
             <h1 class="mealTitle snack">
@@ -117,6 +146,13 @@
                 <br />
                 ドロップしてください！
               </p>
+            </div>
+            <div class="point">
+              <span class="stapleFood">{{ points.snack.stapleFood }}</span>
+              <span class="sideDish">{{ points.snack.sideDish }}</span>
+              <span class="mainDish">{{ points.snack.mainDish }}</span>
+              <span class="dairyProduct">{{ points.snack.dairyProduct }}</span>
+              <span class="fruit">{{ points.snack.fruit }}</span>
             </div>
           </ul>
         </li>
@@ -148,6 +184,11 @@
 
 <script>
 export default {
+  asyncData () {
+    // menusは仮置き。あとで値をDBから取ってくるようにしたい。。。
+    const menus = require('../assets/dummy/dummy.json');
+    return menus;
+  },
   data: () => {
     return {
       meals: {
@@ -156,36 +197,73 @@ export default {
         dinner: [],
         snack: []
       },
-      // menusは仮置き。あとで値をDBから取ってくるようにしたい。。。
-      menus: [
-        {
-          id: '0000001',
-          name: '唐揚げ（中）',
-          kcal: 101,
-          protain: 13.8,
-          fat: 24.52,
-          carbohydrate: 3.92
+      menus: [],
+      points: {
+        breakfast: {
+          stapleFood: 0,
+          sideDish: 0,
+          mainDish: 0,
+          dairyProduct: 0,
+          fruit: 0
         },
-        {
-          id: '0000002',
-          name: 'ごはん（1膳）',
-          kcal: 269,
-          protain: 4,
-          fat: 0.48,
-          carbohydrate: 59.36
+        lunch: {
+          stapleFood: 0,
+          sideDish: 0,
+          mainDish: 0,
+          dairyProduct: 0,
+          fruit: 0
         },
-        {
-          id: '0000003',
-          name: 'サラダ（100g）',
-          kcal: 269,
-          protain: 4,
-          fat: 0.48,
-          carbohydrate: 59.36
+        dinner: {
+          stapleFood: 0,
+          sideDish: 0,
+          mainDish: 0,
+          dairyProduct: 0,
+          fruit: 0
+        },
+        snack: {
+          stapleFood: 0,
+          sideDish: 0,
+          mainDish: 0,
+          dairyProduct: 0,
+          fruit: 0
         }
-      ],
+      },
+      stapleFood: 0,
+      sideDish: 0,
+      mainDish: 0,
+      dairyProduct: 0,
+      fruit: 0,
       element: '',
       draggedMenuId: '',
       placeHolder: ''
+    }
+  },
+  watch: {
+    meals: {
+      handler () {
+        const keys = Object.keys(this.meals);
+        const result = keys.map((key) => {
+          const points = this.meals[key].reduce((obj, meal) => {
+            obj.stapleFood += meal.points.stapleFood || 0;
+            obj.sideDish += meal.points.sideDish || 0;
+            obj.mainDish += meal.points.mainDish || 0;
+            obj.dairyProduct += meal.points.dairyProduct || 0;
+            obj.fruit += meal.points.fruit || 0;
+            return obj;
+          }, {
+            stapleFood: 0,
+            sideDish: 0,
+            mainDish: 0,
+            dairyProduct: 0,
+            fruit: 0
+          });
+
+          return { [key]: points };
+        });
+
+        this.points = Object.assign(...result);
+      },
+      deep: true
     }
   },
   // 画面上のどこで動かしても、dragイベント等が起きるようにmountしておく
@@ -217,8 +295,8 @@ export default {
 
       // クリックされたイベントの位置を設定（ドラッグで動くようにfixedに変更）
       this.element.style.position = 'fixed'
-      this.element.style.top = `${event.pageY - 20}px`
-      this.element.style.left = `${event.pageX - 20}px`
+      this.element.style.top = `${event.clientY - 20}px`
+      this.element.style.left = `${event.clientX - 20}px`
     },
 
     /**
@@ -228,8 +306,8 @@ export default {
      */
     dragMenu (event) {
       // ドラッグされているイベントをマウスに追従させる
-      this.element.style.top = `${event.pageY - 20}px`
-      this.element.style.left = `${event.pageX - 20}px`
+      this.element.style.top = `${event.clientY - 20}px`
+      this.element.style.left = `${event.clientX - 20}px`
 
       // ドロップ対象の.dropAreaまたは.dispAreaの範囲内に入った場合、対象の要素の背景色を変更する
       // 範囲外になったら、背景色を元に戻す
@@ -237,10 +315,10 @@ export default {
       targetAreas.forEach((targetArea) => {
         const target = targetArea.getBoundingClientRect()
         if (
-          event.pageY >= target.top &&
-          event.pageY <= target.bottom &&
-          event.pageX >= target.left &&
-          event.pageX <= target.right
+          event.clientY >= target.top &&
+          event.clientY <= target.bottom &&
+          event.clientX >= target.left &&
+          event.clientX <= target.right
         ) {
           targetArea.style.background = '#eceff1'
         } else {
@@ -263,10 +341,10 @@ export default {
         targetArea.style.background = ''
         const target = targetArea.getBoundingClientRect()
         if (
-          event.pageY >= target.top &&
-          event.pageY <= target.bottom &&
-          event.pageX >= target.left &&
-          event.pageX <= target.right
+          event.clientY >= target.top &&
+          event.clientY <= target.bottom &&
+          event.clientX >= target.left &&
+          event.clientX <= target.right
         ) {
           this.dropMenu(targetArea.id)
         }
@@ -306,6 +384,16 @@ export default {
      */
     removeItem (category, index) {
       this.meals[category].splice(index, 1)
+    },
+
+    /**
+     * 引数で指定されカテゴリのポイントの合計値を産出する
+     */
+    pointSum (category) {
+      return Object.values(this.points).reduce((sum, point) => {
+        sum += point[category];
+        return sum;
+      }, 0);
     }
   }
 }
