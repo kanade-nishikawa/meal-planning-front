@@ -334,30 +334,34 @@ export default {
      * 2. ドラッグしていたイベントを元の位置に戻す
      */
     mouseUpMenu (event) {
-      // ドラッグ対象の範囲内に入っているか確認して、入っていればメニューを追加する
-      // 一応背景色も戻しておく
-      const targetAreas = document.querySelectorAll('.dropArea, .dispArea');
-      targetAreas.forEach((targetArea) => {
-        targetArea.style.background = '';
-        const target = targetArea.getBoundingClientRect();
-        if (
-          event.clientY >= target.top &&
-          event.clientY <= target.bottom &&
-          event.clientX >= target.left &&
-          event.clientX <= target.right
-        ) {
-          this.dropMenu(targetArea.id);
-        }
-      });
+      if (this.isDrag) {
+        // ドラッグ対象の範囲内に入っているか確認して、入っていればメニューを追加する
+        // 一応背景色も戻しておく
+        const targetAreas = document.querySelectorAll('.dropArea, .dispArea');
+        targetAreas.forEach((targetArea) => {
+          targetArea.style.background = '';
+          const target = targetArea.getBoundingClientRect();
+          if (
+            event.clientY >= target.top &&
+            event.clientY <= target.bottom &&
+            event.clientX >= target.left &&
+            event.clientX <= target.right
+          ) {
+            this.dropMenu(targetArea.id);
+            // ドラッグしていた要素のmousedownイベントを消しておく
+            this.element.removeEventListener('mousedown', this.mouseDownMenu, false);
+          }
+        });
 
-      // ドラッグしていたイベントを元の位置に戻す
-      this.placeHolder.remove();
-      this.element.style.top = 0;
-      this.element.style.left = 0;
-      this.element.style.position = 'relative';
+        // ドラッグしていたイベントを元の位置に戻す
+        this.placeHolder.remove();
+        this.element.style.top = 0;
+        this.element.style.left = 0;
+        this.element.style.position = 'relative';
 
-      // ドラッグの終了
-      this.isDrag = false;
+        // ドラッグの終了
+        this.isDrag = false;
+      }
     },
 
     /**
