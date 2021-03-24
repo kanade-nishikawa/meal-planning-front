@@ -10,10 +10,10 @@ module.exports = {
   extends: ['standard', 'eslint:recommended', 'plugin:vue/recommended'],
   plugins: ['vue'],
   rules: {
-    semi: ['off', 'never'],
+    semi: ['error', 'always'],
     'comma-dangle': ['error', 'never'],
     'no-console': 'off',
     'vue/max-attributes-per-line': 'off',
     'vue/html-self-closing': 'off'
   }
-}
+};
