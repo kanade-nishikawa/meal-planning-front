@@ -169,11 +169,15 @@
         </ul>
       </div>
     </div>
+    <side-content :sum-points="sumPoints" />
   </div>
 </template>
 
 <script>
+import SideContent from '@/components/SideContent.vue';
+
 export default {
+  components: { SideContent },
   asyncData () {
     // menusは仮置き。あとで値をDBから取ってくるようにしたい。。。
     const menus = require('../assets/dummy/dummy.json');
@@ -218,16 +222,16 @@ export default {
           fruit: 0
         }
       },
-      stapleFood: 0,
-      sideDish: 0,
-      mainDish: 0,
-      dairyProduct: 0,
-      fruit: 0,
       element: '',
       draggedMenuId: '',
       placeHolder: '',
       isDrag: false
     };
+  },
+  computed: {
+    sumPoints () {
+      return Object.keys(this.points.breakfast).reduce((obj, x) => { obj.[x] = this.pointSum(x); return obj; }, {});
+    }
   },
   watch: {
     meals: {
