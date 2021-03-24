@@ -150,7 +150,7 @@ header {
   position: fixed;
   display: block;
   min-width: 200px;
-  width: calc(20% - 50px);
+  width: calc(20% - 10px);
   height: calc(80% - 30px);
   padding: 15px;
   right: 20px;
@@ -158,6 +158,7 @@ header {
   transform: translateY(-45%);
   background-color: #FFFFFF;
   z-index: 900;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, .2);
 }
 
   .wrapper {
