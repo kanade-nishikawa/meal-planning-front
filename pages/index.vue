@@ -12,23 +12,24 @@
               <i class="icon" />
               朝ごはん
             </h1>
-            <div v-if="meals.breakfast.length" id="breakfast" class="dispArea">
-              <ul
+            <ul v-if="meals.breakfast.length" id="breakfast" class="dispArea">
+              <li
                 v-for="(meal, index) in meals.breakfast"
                 :key="index"
                 class="meal"
               >
-                {{
-                  meal.name
-                }}
-                <span>
+                <span @mousedown="mouseDownMenu($event, meal.id)">
+                  {{
+                    meal.name
+                  }}
+                </span>
+                <button @click="removeItem('breakfast', index)">
                   <i
                     class="closeIcon"
-                    @click="removeItem('breakfast', index)"
                   />
-                </span>
-              </ul>
-            </div>
+                </button>
+              </li>
+            </ul>
             <div v-else id="breakfast" class="dropArea">
               <p>
                 ここに食事を
@@ -50,20 +51,23 @@
               <i class="icon" />
               昼ごはん
             </h1>
-            <div v-if="meals.lunch.length" id="lunch" class="dispArea">
-              <ul
+            <ul v-if="meals.lunch.length" id="lunch" class="dispArea">
+              <li
                 v-for="(meal, index) in meals.lunch"
                 :key="index"
                 class="meal"
               >
-                {{
-                  meal.name
-                }}
-                <span>
-                  <i class="closeIcon" @click="removeItem('lunch', index)" />
+                <span @mousedown="mouseDownMenu($event, meal.id)">
+                  {{
+                    meal.name
+                  }}
+
                 </span>
-              </ul>
-            </div>
+                <button @click="removeItem('lunch', index)">
+                  <i class="closeIcon" />
+                </button>
+              </li>
+            </ul>
             <div v-else id="lunch" class="dropArea">
               <p>
                 ここに食事を
@@ -84,20 +88,22 @@
               <i class="icon" />
               夜ごはん
             </h1>
-            <div v-if="meals.dinner.length" id="dinner" class="dispArea">
-              <ul
+            <ul v-if="meals.dinner.length" id="dinner" class="dispArea">
+              <li
                 v-for="(meal, index) in meals.dinner"
                 :key="index"
                 class="meal"
               >
-                {{
-                  meal.name
-                }}
-                <span>
-                  <i class="closeIcon" @click="removeItem('dinner', index)" />
+                <span @mousedown="mouseDownMenu($event, meal.id)">
+                  {{
+                    meal.name
+                  }}
                 </span>
-              </ul>
-            </div>
+                <button @click="removeItem('dinner', index)">
+                  <i class="closeIcon" />
+                </button>
+              </li>
+            </ul>
             <div v-else id="dinner" class="dropArea">
               <p>
                 ここに食事を
@@ -118,20 +124,22 @@
               <i class="icon" />
               間食
             </h1>
-            <div v-if="meals.snack.length" id="snack" class="dispArea">
-              <ul
+            <ul v-if="meals.snack.length" id="snack" class="dispArea">
+              <li
                 v-for="(meal, index) in meals.snack"
                 :key="index"
                 class="meal"
               >
-                {{
-                  meal.name
-                }}
-                <span>
-                  <i class="closeIcon" @click="removeItem('snack', index)" />
+                <span @mousedown="mouseDownMenu($event, meal.id)">
+                  {{
+                    meal.name
+                  }}
                 </span>
-              </ul>
-            </div>
+                <button @click="removeItem('snack', index)">
+                  <i class="closeIcon" />
+                </button>
+              </li>
+            </ul>
             <div v-else id="snack" class="dropArea">
               <p>
                 ここに食事を
@@ -194,6 +202,7 @@ export default {
       menus: [],
       points: {
         breakfast: {
+          energy: 0,
           stapleFood: 0,
           sideDish: 0,
           mainDish: 0,
@@ -201,6 +210,7 @@ export default {
           fruit: 0
         },
         lunch: {
+          energy: 0,
           stapleFood: 0,
           sideDish: 0,
           mainDish: 0,
@@ -208,6 +218,7 @@ export default {
           fruit: 0
         },
         dinner: {
+          energy: 0,
           stapleFood: 0,
           sideDish: 0,
           mainDish: 0,
@@ -215,6 +226,7 @@ export default {
           fruit: 0
         },
         snack: {
+          energy: 0,
           stapleFood: 0,
           sideDish: 0,
           mainDish: 0,
@@ -230,7 +242,7 @@ export default {
   },
   computed: {
     sumPoints () {
-      return Object.keys(this.points.breakfast).reduce((obj, x) => { obj.[x] = this.pointSum(x); return obj; }, {});
+      return Object.keys(this.points.breakfast).reduce((obj, x) => { obj[x] = this.pointSum(x); return obj; }, {});
     }
   },
   watch: {
@@ -239,6 +251,7 @@ export default {
         const keys = Object.keys(this.meals);
         const result = keys.map((key) => {
           const points = this.meals[key].reduce((obj, meal) => {
+            obj.energy += meal.kcal || 0;
             obj.stapleFood += meal.points.stapleFood || 0;
             obj.sideDish += meal.points.sideDish || 0;
             obj.mainDish += meal.points.mainDish || 0;
@@ -246,6 +259,7 @@ export default {
             obj.fruit += meal.points.fruit || 0;
             return obj;
           }, {
+            energy: 0,
             stapleFood: 0,
             sideDish: 0,
             mainDish: 0,
@@ -279,7 +293,11 @@ export default {
      * 3. ドラッグされているイベントに紐づくIDを変数に格納しておく
      */
     mouseDownMenu (event, id) {
-      this.element = event.target;
+      if (event.target.tagName !== 'LI') {
+        this.element = event.target.closest('LI');
+      } else {
+        this.element = event.target;
+      }
       // placeHolder作成
       this.placeHolder = document.createElement('li');
       this.placeHolder.style.height = `${event.height}px`;
@@ -291,6 +309,7 @@ export default {
 
       // クリックされたイベントの位置を設定（ドラッグで動くようにfixedに変更）
       this.element.style.position = 'fixed';
+      this.element.style.width = '220px';
       this.element.style.top = `${Math.abs(event.clientY - 20)}px`;
       this.element.style.left = `${Math.abs(event.clientX - 20)}px`;
 
@@ -352,16 +371,15 @@ export default {
             event.clientX <= target.right
           ) {
             this.dropMenu(targetArea.id);
-            // ドラッグしていた要素のmousedownイベントを消しておく
-            this.element.removeEventListener('mousedown', this.mouseDownMenu, false);
           }
         });
 
         // ドラッグしていたイベントを元の位置に戻す
         this.placeHolder.remove();
-        this.element.style.top = 0;
-        this.element.style.left = 0;
-        this.element.style.position = 'relative';
+        this.element.style.top = '';
+        this.element.style.left = '';
+        this.element.style.width = '';
+        this.element.style.position = '';
 
         // ドラッグの終了
         this.isDrag = false;
@@ -384,7 +402,7 @@ export default {
     },
 
     /**
-     * 引数で指定されカテゴリのポイントの合計値を産出する
+     * 引数で指定されカテゴリのポイントの合計値を計算する
      */
     pointSum (category) {
       return Object.values(this.points).reduce((sum, point) => {
