@@ -7,154 +7,10 @@
           献立
         </h1>
         <ul class="mealArea">
-          <li class="mealBox">
-            <h1 class="mealTitle breakfast">
-              <i class="icon" />
-              朝ごはん
-            </h1>
-            <ul v-if="meals.breakfast.length" id="breakfast" class="dispArea">
-              <li
-                v-for="(meal, index) in meals.breakfast"
-                :key="index"
-                class="meal"
-              >
-                <span @mousedown="mouseDownMenu($event, meal.id)">
-                  {{
-                    meal.name
-                  }}
-                </span>
-                <button @click="removeItem('breakfast', index)">
-                  <i
-                    class="closeIcon"
-                  />
-                </button>
-              </li>
-            </ul>
-            <div v-else id="breakfast" class="dropArea">
-              <p>
-                ここに食事を
-                <br />
-                ドロップしてください！
-              </p>
-            </div>
-            <div class="point">
-              <span class="stapleFood">{{ points.breakfast.stapleFood }}</span>
-              <span class="sideDish">{{ points.breakfast.sideDish }}</span>
-              <span class="mainDish">{{ points.breakfast.mainDish }}</span>
-              <span class="dairyProduct">{{ points.breakfast.dairyProduct }}</span>
-              <span class="fruit">{{ points.breakfast.fruit }}</span>
-            </div>
-          </li>
-
-          <li class="mealBox">
-            <h1 class="mealTitle lunch">
-              <i class="icon" />
-              昼ごはん
-            </h1>
-            <ul v-if="meals.lunch.length" id="lunch" class="dispArea">
-              <li
-                v-for="(meal, index) in meals.lunch"
-                :key="index"
-                class="meal"
-              >
-                <span @mousedown="mouseDownMenu($event, meal.id)">
-                  {{
-                    meal.name
-                  }}
-
-                </span>
-                <button @click="removeItem('lunch', index)">
-                  <i class="closeIcon" />
-                </button>
-              </li>
-            </ul>
-            <div v-else id="lunch" class="dropArea">
-              <p>
-                ここに食事を
-                <br />
-                ドロップしてください！
-              </p>
-            </div>
-            <div class="point">
-              <span class="stapleFood">{{ points.lunch.stapleFood }}</span>
-              <span class="sideDish">{{ points.lunch.sideDish }}</span>
-              <span class="mainDish">{{ points.lunch.mainDish }}</span>
-              <span class="dairyProduct">{{ points.lunch.dairyProduct }}</span>
-              <span class="fruit">{{ points.lunch.fruit }}</span>
-            </div>
-          </li>
-          <li class="mealBox">
-            <h1 class="mealTitle dinner">
-              <i class="icon" />
-              夜ごはん
-            </h1>
-            <ul v-if="meals.dinner.length" id="dinner" class="dispArea">
-              <li
-                v-for="(meal, index) in meals.dinner"
-                :key="index"
-                class="meal"
-              >
-                <span @mousedown="mouseDownMenu($event, meal.id)">
-                  {{
-                    meal.name
-                  }}
-                </span>
-                <button @click="removeItem('dinner', index)">
-                  <i class="closeIcon" />
-                </button>
-              </li>
-            </ul>
-            <div v-else id="dinner" class="dropArea">
-              <p>
-                ここに食事を
-                <br />
-                ドロップしてください！
-              </p>
-            </div>
-            <div class="point">
-              <span class="stapleFood">{{ points.dinner.stapleFood }}</span>
-              <span class="sideDish">{{ points.dinner.sideDish }}</span>
-              <span class="mainDish">{{ points.dinner.mainDish }}</span>
-              <span class="dairyProduct">{{ points.dinner.dairyProduct }}</span>
-              <span class="fruit">{{ points.dinner.fruit }}</span>
-            </div>
-          </li>
-          <li class="mealBox">
-            <h1 class="mealTitle snack">
-              <i class="icon" />
-              間食
-            </h1>
-            <ul v-if="meals.snack.length" id="snack" class="dispArea">
-              <li
-                v-for="(meal, index) in meals.snack"
-                :key="index"
-                class="meal"
-              >
-                <span @mousedown="mouseDownMenu($event, meal.id)">
-                  {{
-                    meal.name
-                  }}
-                </span>
-                <button @click="removeItem('snack', index)">
-                  <i class="closeIcon" />
-                </button>
-              </li>
-            </ul>
-            <div v-else id="snack" class="dropArea">
-              <p>
-                ここに食事を
-                <br />
-                ドロップしてください！
-              </p>
-            </div>
-            <div class="point">
-              <span class="stapleFood">{{ points.snack.stapleFood }}</span>
-              <span class="sideDish">{{ points.snack.sideDish }}</span>
-              <span class="mainDish">{{ points.snack.mainDish }}</span>
-              <span class="dairyProduct">{{ points.snack.dairyProduct }}</span>
-              <span class="fruit">{{ points.snack.fruit }}</span>
-            </div>
-          </li>
+          <meal-box :id="'breakfast'" :title="'朝ごはん'" :meals="meals.breakfast" />
+          <meal-box :id="'lunch'" :title="'昼ごはん'" :meals="meals.lunch" />
+          <meal-box :id="'dinner'" :title="'夜ごはん'" :meals="meals.dinner" />
+          <meal-box :id="'snack'" :title="'間食'" :meals="meals.snack" />
         </ul>
       </div>
 
@@ -183,9 +39,10 @@
 
 <script>
 import SideContent from '@/components/SideContent.vue';
+import MealBox from '@/components/MealBox.vue';
 
 export default {
-  components: { SideContent },
+  components: { SideContent, MealBox },
   asyncData () {
     // menusは仮置き。あとで値をDBから取ってくるようにしたい。。。
     const menus = require('../assets/dummy/dummy.json');
