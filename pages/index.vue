@@ -19,18 +19,7 @@
           <i class="icon" />
           レシピ
         </h1>
-        <ul class="menuArea">
-          <li
-            v-for="menu of menus"
-            :key="menu.id"
-            class="menuBox"
-            @mousedown="mouseDownMenu($event, menu.id)"
-          >
-            {{
-              menu.name
-            }}
-          </li>
-        </ul>
+        <menu-box :menus="menus" />
       </div>
     </div>
     <side-content :sum-points="sumPoints" />
@@ -40,9 +29,10 @@
 <script>
 import SideContent from '@/components/SideContent.vue';
 import MealBox from '@/components/MealBox.vue';
+import MenuBox from '@/components/MenuBox.vue';
 
 export default {
-  components: { SideContent, MealBox },
+  components: { SideContent, MealBox, MenuBox },
   asyncData () {
     // menusは仮置き。あとで値をDBから取ってくるようにしたい。。。
     const menus = require('../assets/dummy/dummy.json');
@@ -136,6 +126,7 @@ export default {
   mounted () {
     window.addEventListener('mousemove', this.mouseMoveMenu);
     window.addEventListener('mouseup', this.mouseUpMenu);
+    this.$nuxt.$on('mouseDownMenu', this.mouseDownMenu);
   },
   // mount前にリセットしておく
   beforeunMount () {

@@ -19,6 +19,28 @@ export const state = () => ({
       label: '普通'
     }
   ],
+  categories: [
+    {
+      value: 'stapleFood',
+      label: '主食'
+    },
+    {
+      value: 'sideDish',
+      label: '副菜'
+    },
+    {
+      value: 'mainDish',
+      label: '主菜'
+    },
+    {
+      value: 'dairyProduct',
+      label: '牛乳・乳製品'
+    },
+    {
+      value: 'fruit',
+      label: '果物'
+    }
+  ],
   amounts: [
     {
       type: 1,
@@ -68,12 +90,21 @@ export const state = () => ({
   ]
 });
 
+export const actions = {
+  convert (state, param) {
+    return state.state[param.mst].find(x => x.value === param.val)?.label;
+  }
+};
+
 export const getters = {
   genders (state) {
     return state.genders;
   },
   activeLevels (state) {
     return state.activeLevels;
+  },
+  categories (state) {
+    return state.categories;
   },
   amount: (state) => (type) => {
     return state.amounts.find(x => x.type === type);

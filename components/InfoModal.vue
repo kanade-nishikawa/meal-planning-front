@@ -47,8 +47,8 @@
 </template>
 
 <script>
-import Number from '@/components/Number.vue';
-import Radio from '@/components/Radio.vue';
+import Number from '~/components/parts/Number.vue';
+import Radio from '~/components/parts/Radio.vue';
 
 export default {
   components: { Number, Radio },

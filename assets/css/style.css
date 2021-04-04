@@ -603,37 +603,116 @@ header {
   .menuArea {
     display: block;
     position: relative;
-    width: calc(100% - 30px);
-    height: calc(100% - 30px);
+    left: 30px;
+    width: calc(100% - 90px);
+    height: 300px;
     margin: 15px;
+    padding: 15px 0 15px 0;
     float: left;
     overflow: hidden;
-    text-align: center;
+    text-align: left;
+    background-color: #FFFFFF;
+    border-radius: 5px;
   }
-    .menuBox {
+    .menuLabelArea {
       position: relative;
-      margin: 5px;
-      padding: 15px;
-      min-width: 220px;
-      width: calc(15% - 5px);
-      height: auto;
-      color: #FFFFFF;
-      background-color: #545261;
-      transition: box-shadow .3s;
-      transition: background-color .3s;
-      -webkit-transition: box-shadow background-color .3s;
-      -webkit-transition: background-color .3s;
-      border-radius: 5px;
-      z-index: 99;
+      height: 100%;
+      width: calc(20% - 30px);
+      vertical-align: bottom;
     }
-      .menuBox:hover:not(.placeHolder) {
-        cursor: grab;
-        background-color: #635e7c;
+      .menuLabel {
+        position: relative;
+        width: 90%;
+        height: auto;
+        padding: 10px;
+        margin: 5px 0 5px 0;
+        color: #FFFFFF;
+        background-color: #999999;
+        transition: all .3s;
+      }
+      .menuLabel:hover {
+        cursor: pointer;
         box-shadow: 0 1px 6px rgba(0, 0, 0, .3);
       }
-      .menuBox:active:not(.placeHolder) {
-        cursor: grabbing;
+      .menuLabel.stapleFood {
+        background-color: #f7cb89;
       }
+        .menuLabel.stapleFood:hover {
+          background-color: #f0a639;
+        }
+        .menuLabel.stapleFood.active {
+          background-color: #f0a639;
+        }
+      .menuLabel.sideDish {
+        background-color: #8ecf88;
+      }
+        .menuLabel.sideDish:hover {
+          background-color: #3f9936;
+        }
+        .menuLabel.sideDish.active {
+          background-color: #3f9936;
+        }
+      .menuLabel.mainDish {
+        background-color: #f194b3;
+      }
+        .menuLabel.mainDish:hover {
+          background-color: #e2638d;
+        }
+        .menuLabel.mainDish.active {
+          background-color: #e2638d;
+        }
+      .menuLabel.dairyProduct {
+        background-color: #c8a1e4;
+      }
+        .menuLabel.dairyProduct:hover {
+          background-color: #a06cc4;
+        }
+        .menuLabel.dairyProduct.active {
+          background-color: #a06cc4;
+        }
+      .menuLabel.fruit {
+        background-color: #a6a7eb;
+      }
+        .menuLabel.fruit:hover {
+          background-color: #6c6ec4;
+        }
+        .menuLabel.fruit.active {
+          background-color: #6c6ec4;
+        }
+
+    .menuBoxArea {
+      position: relative;
+      width: 80%;
+      overflow-y: scroll;
+    }
+      .menuBox {
+        position: relative;
+        margin: 5px;
+        padding: 15px;
+        min-width: 210px;
+        width: calc(15% - 5px);
+        height: auto;
+        color: #FFFFFF;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        background-color: #545261;
+        transition: box-shadow .3s;
+        transition: background-color .3s;
+        -webkit-transition: box-shadow background-color .3s;
+        -webkit-transition: background-color .3s;
+        border-radius: 5px;
+        z-index: 99;
+      }
+        .menuBox:hover:not(.placeHolder) {
+          cursor: grab;
+          background-color: #635e7c;
+          box-shadow: 0 1px 6px rgba(0, 0, 0, .3);
+        }
+        .menuBox:active:not(.placeHolder) {
+          cursor: grabbing;
+        }
     .placeHolder {
       background-color: #d3d7dc;
       z-index: 1;
